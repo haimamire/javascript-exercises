@@ -22,31 +22,33 @@ describe("contains", () => {
     },
   };
 
+  console.log(isNaN(NaN))
+
   test("true if the provided number is a value within the object", () => {
     expect(contains(object, 44)).toBe(true);
   });
 
-  test.skip("true if the provided string is a value within the object", () => {
+  test("true if the provided string is a value within the object", () => {
     expect(contains(object, "foo")).toBe(true);
   });
 
-  test.skip("does not convert input string into a number when searching for a value within the object", () => {
+  test("does not convert input string into a number when searching for a value within the object", () => {
     expect(contains(object, "44")).toBe(false);
   });
 
-  test.skip("false if the provided string is not a value within the object", () => {
+  test("false if the provided string is not a value within the object", () => {
     expect(contains(object, "bar")).toBe(false);
   });
 
-  test.skip("true if provided string is within the object, even if duplicated", () => {
+  test("true if provided string is within the object, even if duplicated", () => {
     expect(contains(object, "e")).toBe(true);
   });
 
-  test.skip("true if the object contains the same object by reference", () => {
+  test("true if the object contains the same object by reference", () => {
     expect(contains(object, meaningOfLifeArray)).toBe(true);
   });
 
-  test.skip("false if no matching object reference", () => {
+  test("false if no matching object reference", () => {
     expect(contains(object, [42])).toBe(false);
   });
 
@@ -54,7 +56,7 @@ describe("contains", () => {
     expect(contains(object, NaN)).toBe(true);
   });
 
-  test.skip("true if the provided value exists and is null", () => {
+  test("true if the provided value exists and is null", () => {
     expect(contains(object, null)).toBe(true);
   });
 });
